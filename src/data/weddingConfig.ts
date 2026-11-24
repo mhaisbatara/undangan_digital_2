@@ -115,8 +115,8 @@ export const weddingConfig: WeddingConfig = {
     weddingDateISO: "2024-12-23T08:00:00+07:00",
     heroPhoto: "/images/couple-hd.jpg",
     heroSubtitle: "The Wedding Of",
-    // Lagu latar: Raim Laode - Bersenja Gurau
-    audioUrl: "/music/bersenja-gurau.mp3",
+    // Lagu latar: Raim Laode - Bersenja Gurau (Mulai tepat sebelum Reff)
+    audioUrl: "/music/bersenja-gurau-v2.mp3",
   },
   greeting: {
     bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
