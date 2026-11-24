@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f4f7f9;
+  --foreground: #2d3e4d;
+}
+
+body {
+  color: var(--foreground);
+  background-color: #0f172a;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Wedding Design */
+.font-script {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+.font-serif-wedding {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Dusty Slate Wedding Gradient Background */
+.bg-wedding-gradient {
+  background: linear-gradient(180deg, #edf3f7 0%, #d8e5ed 25%, #9ab5c8 65%, #567a92 100%);
+}
+
+.bg-cover-gradient {
+  background: linear-gradient(180deg, #f0f5f8 0%, #e2ecf2 35%, #8baec0 70%, #4a6d84 100%);
+}
+
+/* Glassmorphism Card Style */
+.wedding-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 30px -5px rgba(74, 109, 132, 0.08);
+}
+
+.wedding-card-glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 35px -5px rgba(74, 109, 132, 0.12);
+}
+
+.wedding-card-dark {
+  background: rgba(33, 45, 55, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #9ab5c8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #567a92;
+}
+
+/* Custom animations */
+@keyframes swaySlow {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-sway {
+  animation: swaySlow 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8), 0 0 60px rgba(186, 164, 232, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(255, 255, 255, 0.95), 0 0 85px rgba(186, 164, 232, 0.55);
+  }
+}
+
+.glow-circle {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
