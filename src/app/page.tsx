@@ -48,9 +48,9 @@ function WeddingInvitationContent() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-b from-[#1b2b37] via-[#243746] to-[#1a2935] flex justify-center items-start">
+    <main className="min-h-screen w-full bg-dusty-50 relative overflow-x-hidden flex flex-col">
       
-      {/* ================= 1. HALAMAN SAMPUL (GATE OVERLAY) ================= */}
+      {/* ================= 1. HALAMAN SAMPUL (GATE FULL-WIDTH RESPONSIVE) ================= */}
       <AnimatePresence>
         {!isOpen && (
           <SampulGate
@@ -60,17 +60,14 @@ function WeddingInvitationContent() {
         )}
       </AnimatePresence>
 
-      {/* ================= 2. UNDANGAN UTAMA (MOBILE-FIRST CENTERED) ================= */}
-      {/* Di HP: Memenuhi layar penuh (w-full). */}
-      {/* Di Desktop: Terpusat di tengah dengan max-w-[430px] dan background dusty slate polos/lembut di sisi kiri-kanan. */}
+      {/* ================= 2. UNDANGAN UTAMA (FULL-WIDTH RESPONSIVE) ================= */}
       <motion.div
-        initial={{ opacity: 0.85, scale: 0.98 }}
-        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0.85, scale: 0.98 }}
+        initial={{ opacity: 0.85, scale: 0.99 }}
+        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0.85, scale: 0.99 }}
         transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-[430px] min-h-screen bg-dusty-50 shadow-2xl relative flex flex-col overflow-x-hidden"
+        className="w-full min-h-screen bg-dusty-50 relative flex flex-col overflow-x-hidden"
       >
-        
-        {/* Cover Utama dengan Foto Lingkaran Glow, Bunga Lavender, Simpan Tanggal, & Scroll ke bawah */}
+        {/* Cover Utama dengan Foto Latar HD Penuh & Teks Elegan */}
         <CoverOpening />
 
         {/* Salam Pembuka */}
@@ -116,7 +113,7 @@ export default function WeddingPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
+        <div className="min-h-screen bg-slate-900 flex items-center justify-center text-white">
           <div className="flex flex-col items-center gap-3">
             <div className="w-10 h-10 border-4 border-dusty-400 border-t-transparent rounded-full animate-spin" />
             <p className="font-script text-2xl text-lavender-300">Memuat Undangan...</p>
