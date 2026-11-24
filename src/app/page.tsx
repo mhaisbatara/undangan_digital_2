@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { weddingConfig } from "@/data/weddingConfig";
 import { SampulGate } from "@/components/SampulGate";
@@ -63,7 +63,12 @@ function WeddingInvitationContent() {
       {/* ================= 2. UNDANGAN UTAMA (MOBILE-FIRST CENTERED) ================= */}
       {/* Di HP: Memenuhi layar penuh (w-full). */}
       {/* Di Desktop: Terpusat di tengah dengan max-w-[430px] dan background dusty slate polos/lembut di sisi kiri-kanan. */}
-      <div className="w-full max-w-[430px] min-h-screen bg-dusty-50 shadow-2xl relative flex flex-col overflow-x-hidden">
+      <motion.div
+        initial={{ opacity: 0.85, scale: 0.98 }}
+        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0.85, scale: 0.98 }}
+        transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full max-w-[430px] min-h-screen bg-dusty-50 shadow-2xl relative flex flex-col overflow-x-hidden"
+      >
         
         {/* Cover Utama dengan Foto Lingkaran Glow, Bunga Lavender, Simpan Tanggal, & Scroll ke bawah */}
         <CoverOpening />
@@ -101,7 +106,7 @@ function WeddingInvitationContent() {
           isPlaying={isPlayingMusic}
           onTogglePlay={handleToggleMusic}
         />
-      </div>
+      </motion.div>
 
     </main>
   );
