@@ -105,7 +105,7 @@ export const weddingConfig: WeddingConfig = {
   meta: {
     title: "The Wedding of Nisa & Fuad | 23.12.2024",
     description: "Undangan Pernikahan Digital Nisa & Fuad. Senin, 23 Desember 2024.",
-    ogImage: "/images/couple-reference.jpg",
+    ogImage: "https://mhaisbatara.github.io/undangan_digital_2/og-image.jpg",
   },
   couple: {
     groomNickname: "Fuad",
