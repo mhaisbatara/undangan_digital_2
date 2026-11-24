@@ -62,3 +62,11 @@ export function downloadIcsFile(event: {
   link.click();
   document.body.removeChild(link);
 }
+
+export function getAssetPath(path: string): string {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  if (!path || path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) return path;
+  if (!path.startsWith("/")) path = "/" + path;
+  return `${basePath}${path}`;
+}
+

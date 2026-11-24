@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Music, Disc, Volume2, VolumeX } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 interface AudioPlayerProps {
   audioUrl: string;
@@ -28,7 +29,7 @@ export function AudioPlayer({ audioUrl, isPlaying, onTogglePlay }: AudioPlayerPr
 
   return (
     <>
-      <audio ref={audioRef} src={audioUrl} loop preload="auto" />
+      <audio ref={audioRef} src={getAssetPath(audioUrl)} loop preload="auto" />
       
       {/* Floating music button */}
       <button
